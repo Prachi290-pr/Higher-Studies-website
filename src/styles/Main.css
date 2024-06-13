@@ -1,0 +1,156 @@
+.main{
+    width:100%;
+    background-color:rgb(28, 78, 100); ;
+
+    .secTitle{
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        font-size: 60px;
+        color:rgb(254, 254, 254);
+        border-bottom: 2px;
+        
+        p{
+            position: relative;
+        }
+
+        p::after{
+            content: '';
+            position: absolute;
+            height: 5px;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            background:greenyellow ;
+            transition: width .2s;
+        }
+        p:hover:after{
+            width: 100%;
+        }
+    }
+
+    .secContainer{
+        width: 1200px;
+        display:flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 10px;
+       
+
+        .courseCard{
+            
+            height: 50%;
+            width:800px;
+            display: grid;
+            row-gap: 10px;
+            border-radius: 10px;
+            align-items: center;
+            background: rgb(197, 212, 218);
+            box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+            overflow:hidden;
+
+            &:hover{
+                background: rgb(223, 235, 241);
+                box-shadow: 1 4px 4px rgba(85, 85, 114, 0.549);
+                transition: 2s ease;
+            }
+        }
+
+        .imgDiv{
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+
+            img{
+                height:100%;
+                width: 100%;
+                object-fit: cover;
+                transition: 2s ease;
+            }
+
+            &:hover{
+                img{
+                    transform: scale(1.1);
+
+                }
+            }
+        }
+
+        .cardInfo{
+            padding: 1rem;
+
+            .courseName{
+                color:black;
+                font-size: 1.25rem;
+                padding: 0.5rem;
+                border-top: 1.5px solid gray;
+                border-bottom: 1.5px solid gray;
+            }
+            .location{
+                gap: 1rem;
+
+                .icon{
+                    font-size: 18px;
+                }
+            }
+            .name{
+                color:grey;
+                font-weight: 400;
+                font-size: 14px;
+                margin: 1.5rem 0;
+                
+            }
+
+            .time{
+                color:grey;
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+            .descrip{
+                font-size: 13.5px;
+                font-weight: 500;
+            }
+        }
+
+        .btn{
+            width: 80px;
+            height: 20px;
+            margin-top: 1rem;
+            border:none;
+            outline: none;
+            border-radius: 5px;
+            gap:.5rem;
+            justify-content: space-between;
+            background-color:rgb(61, 113, 135)
+        }
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .secTitle{
+        font-size: 1.5rem;
+        &::after{
+            width: 155px !important;
+        }
+    }
+    .secContainer{
+        grid-template-columns: repeat(3,1fr);
+
+        .courseCard{
+            height:auto;
+        }
+    }
+}
+
+@media screen and (min-width: 840px){
+    .secContainer{
+        grid-template-columns: repeat(5,1fr);
+
+        .courseCard{
+            height:auto;
+        }
+    }
+}
